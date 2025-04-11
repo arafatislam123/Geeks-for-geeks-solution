@@ -15,7 +15,22 @@ using namespace std;
 
 void solve(int tc)
 {
-              
+    int n;
+    cin >> n;
+    int v[n];
+    for (int i = 0; i < n;i++)
+    {
+        cin >> v[i];
+    }
+    map<int, int> mp;
+    for (auto freq:v)
+    {
+       mp[freq]++;
+    }
+    for(auto x:mp)
+    {
+        cout << x.first << " " << x.second << nl;
+    }
 }
 
 int main()
