@@ -1,5 +1,10 @@
+// ****INPUT****
+// amar sonar bangla ami tumay valovashi valovashi
+// ****output****
+// 2
+
 #include <bits/stdc++.h>
-using namespace std;
+    using namespace std;
 
 #define ll long long
 #define pb push_back
@@ -16,28 +21,28 @@ using namespace std;
 void solve(int tc)
 {
     map<string, int> mp;
+    
     string s;
     getline(cin, s);
     stringstream ss(s);
     string s2;
     int maxi = 0;
-    int ans;
-    while(ss>>s2)
+   
+    while (ss >> s2)
     {
         mp[s2]++;
         // cout << mp[s2] << " ";
-         ans = max(maxi, mp[s2]);
-       
+        maxi = max(maxi, mp[s2]);
     }
-    cout << ans << " ";
+    cout << maxi << nl;
 }
 
 int main()
 {
- ios_base::sync_with_stdio(0);
-  cin.tie(0);
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
     int tc = 1;
-    //cin >> tc;
+    // cin >> tc;
 
     for (int i = 1; i <= tc; i++)
         solve(i);
