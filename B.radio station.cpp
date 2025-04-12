@@ -1,5 +1,11 @@
+// Codeforces string and map related problems
+//     prolem link : https : // codeforces.com/contest/918/problem/B
+
+
+
 #include <bits/stdc++.h>
-using namespace std;
+
+                          using namespace std;
 
 #define ll long long
 #define pb push_back
@@ -12,54 +18,38 @@ using namespace std;
 #define rALL(v) (v).rbegin(), (v).rend()
 
 #define show(x) cout << #x << " : " << x << endl
-// map<string, int> mp;
-
-// string s;
-// getline(cin, s);
-// stringstream ss(s);
-// string s2;
-// int maxi = 0;
-
-// while (ss >> s2)
-// {
-//     mp[s2]++;
-//     // cout << mp[s2] << " ";
-//     maxi = max(maxi, mp[s2]);
-// }
-// cout << maxi << nl;
 
 void solve(int tc)
 {
-    int n, m;
-    cin >> n >> m;
-    pair<string, string> p1;
-    pair<string, string> p2;
-    while(n--)
+    int n, k;
+    cin >> n >> k;
+    map<string, string> mp;
+    for (int i = 1; i <= n; i++)
     {
-        string x, y;
-        cin >> x >> y;
-        p1 = make_pair(x, y);
+        string name, ip;
+        cin >> name >> ip;
+        mp[ip] = name;
     }
-    while(m--)
+    // while (k--)
+    // {
+    //     string s, ip;
+    //     cin >> s >> ip;
+    //     // ip.pop_back();
+    //     cout << s << " " << ip << "; #" << mp[ip] << nl;
+    // }
+    for (int i = 0; i < k;i++)
     {
-        string a, b;
-        cin >> a >> b;
-        p2 = make_pair(a, b);
-    }
-    for (int i = 0; i < m;i++)
-    {
-        if(p1.second==p2.second){
-            cout << p1.first << " " << p1.second << ";" << " " << "#" << p2.first << nl;
-        }
+        string s, ip;
+        cin >> s >> ip;
+        ip.pop_back();
+        cout << s << " " << ip << ";" << " #"<< mp[ip] << nl;
     }
 }
 
 int main()
 {
- ios_base::sync_with_stdio(0);
-  cin.tie(0);
     int tc = 1;
-    //cin >> tc;
+    // cin >> tc;
 
     for (int i = 1; i <= tc; i++)
         solve(i);
